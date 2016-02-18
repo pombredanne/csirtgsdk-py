@@ -73,8 +73,8 @@ class Indicator(object):
 
         if os.path.isfile(blob):
             filename = blob
-            with open(blob) as f:
-                data = f.read()
+            with open(blob, encoding="ISO-8859-1") as f:
+                data = f.read().encode('utf-8')
         else:
             if filename is None:
                 raise RuntimeError('missing filename')
